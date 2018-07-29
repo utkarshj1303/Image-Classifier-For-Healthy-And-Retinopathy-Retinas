@@ -12,9 +12,11 @@ I used various steps for preprocessing the images.
 6. Mask - After performing the above 5 steps, some images still had pixels that came from the outline of the eye and should have been classified as the background. To get rid of the outline, I made a mask of the eye. To make the eye of the mask, I thresholded the green channel of the image at 0.1*(Max value in the image) as it gave me the best mask of the eye in the image. Since I didn’t want the outline of the eye in my processed images and knew that most of the spots were towards the inside of the eye, I eroded the mask with disk shaped structuring element of radius 60 and eroded
 the eye, again using imerode. I used a radius of 60 because it gave me a mask that was sufficiently eroded.
 
+
 Features
 1. Number of Spots - After performing the preprocessing steps, I counted the number of distinct spots (connected components) in the image using bwconncomp. This function counts the number of connected components in the image similar to what we learned in class. After counting the number of spots in the image, I thresholded the value of the features so if the number of spots was greater than 1 then the feature value assigned to the image was 1 while if it was less than or equal to one, it was given a value of 0. I did this because I noticed that the healthy images usually had 1 to less spots while the unhealthy images had more than one spot.
 2. Area - For my second feature, I counted the number of pixels with that value of 1 in the processed images because I saw that the unhealthy images had a larger number of pixels with the value of 1 as compared to the healthy images. For this feature, I simply took the sum of all the values in the image. I thresholded the value of the features so if the area was greater than 2500 then the feature value assigned to the image was 1 while if it was less than or equal to 2500, it was given a value of 0. I did this because I noticed that the healthy images usually had and area of less than or equal to 2500 and unhealthy images usually had areas that exceeded 2500.
+
 
 Cross Validation
 Scaling - I did not scale my features as both features had either a value of 1 or 0 and scaling would not help in this case. The code for how I would do the scaling is in the code but it is commented out.
