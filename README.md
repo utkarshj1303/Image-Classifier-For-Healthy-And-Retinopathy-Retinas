@@ -1,3 +1,5 @@
+A classifier in MATLAB to differentiate between healthy and retinopathy retinas.
+
 CS 567 Final Project By Utkarsh Jain
 
 Preprocessing
