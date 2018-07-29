@@ -3,7 +3,6 @@ A classifier in MATLAB that differentiates between healthy and retinopathy retin
 CS 567 Final Project By Utkarsh Jain
 
 Preprocessing
-I used various steps for preprocessing the images.
 1. Use only the green channel - I used only the green channel for my processing since it had the greatest contrast between the spots and the rest of the image.
 2. Subtract median filtered image from original image - To remove the intensity gradient, I used a low pass filter (Median filter) to get an estimate of the low frequencies in the image. Then I subtracted the median filtered image from the original image which reduced the intensity gradient. The size of the kernel I used was 5*5 because a smaller filter didn’t remove the intensity gradient and bigger median filters blurred the image too much and too much information was lost.
 3. Windowing Function - Since my objective was to pull out the spots in the image and focus only on the higher intensities, I used a windowing function to make the higher intensities in the image more prominent. For each image, I used 0.61*(Max value in the image) for the lower limit of the windowing function and 0.95*(Max value in the image) as the upper limit of the windowing function. I used these bounds because after a lot of trial and error, these bounds gave me the best results for most of the images and made the spots more prominent.
