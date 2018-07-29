@@ -1,4 +1,4 @@
-A classifier in MATLAB that differentiate between healthy and retinopathy retinas.
+A classifier in MATLAB that differentiates between healthy and retinopathy retinas.
 
 CS 567 Final Project By Utkarsh Jain
 
