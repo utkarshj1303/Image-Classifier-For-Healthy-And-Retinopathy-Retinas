@@ -2,7 +2,12 @@ A classifier in MATLAB that differentiates between healthy and retinopathy retin
 
 CS 567 Final Project By Utkarsh Jain
 
+<<<<<<< HEAD
 ![Retinas After Processing](Retinas After Image Processing.png)
+=======
+![Retinas After Processing](Retinas_After_Image_Processing.png)
+
+>>>>>>> e08de91bad5f593c2be142d494b68c73aa51693b
 Preprocessing
 1. Use only the green channel - I used only the green channel for my processing since it had the greatest contrast between the spots and the rest of the image.
 2. Subtract median filtered image from original image - To remove the intensity gradient, I used a low pass filter (Median filter) to get an estimate of the low frequencies in the image. Then I subtracted the median filtered image from the original image which reduced the intensity gradient. The size of the kernel I used was 5*5 because a smaller filter didn’t remove the intensity gradient and bigger median filters blurred the image too much and too much information was lost.
